@@ -1,0 +1,9 @@
+package com.dagmar87.medico.model;
+
+public enum ERole {
+	
+	ROLE_USER,
+    ROLE_MODERATOR,
+    ROLE_ADMIN
+
+}

@@ -31,6 +31,10 @@ public class crm {
 	@OnDelete(action = OnDeleteAction.CASCADE)
 	@JsonIgnore
 	private user user;
+	
+	public crm() {
+		
+	}
 
 	public Long getId() {
 		return id;

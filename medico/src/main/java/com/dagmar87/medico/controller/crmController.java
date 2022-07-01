@@ -40,7 +40,7 @@ public class crmController {
 		return new ResponseEntity<>(crms, HttpStatus.OK);
 	}
 
-	@GetMapping("/crms/{id}")
+	@GetMapping("/users/{userId}/crms/{id}")
 	public ResponseEntity<crm> getCrmById(@PathVariable(value = "id") Long id) {
 		crm crm = crmRep.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("CRM não encontrado com id = " + id));
@@ -56,7 +56,7 @@ public class crmController {
 		return new ResponseEntity<>(crm, HttpStatus.CREATED);
 	}
 
-	@PutMapping("/crms/{id}")
+	@PutMapping("/users/{userId}/crms/{id}")
 	public ResponseEntity<crm> updateCrm(@PathVariable("id") long id, @RequestBody crm crmRequest) {
 		crm crm = crmRep.findById(id)
 				.orElseThrow(() -> new ResourceNotFoundException("CrmId " + id + "não encontrado"));
@@ -66,7 +66,7 @@ public class crmController {
 		return new ResponseEntity<>(crmRep.save(crm), HttpStatus.OK);
 	}
 
-	@DeleteMapping("/crms/{id}")
+	@DeleteMapping("/users/{userId}/crms/{id}")
 	public ResponseEntity<HttpStatus> deleteCrm(@PathVariable("id") long id) {
 		crmRep.deleteById(id);
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
@@ -81,7 +81,7 @@ public class crmController {
 		return new ResponseEntity<>(HttpStatus.NO_CONTENT);
 	}
 
-	@GetMapping("/crms/{specialty}")
+	@GetMapping("/users/{userId}/crms/{specialty}")
 	public ResponseEntity<List<crm>> findBySpecialty(@PathVariable(value = "specialty") String specialty) {
 		List<crm> crms = crmRep.findBySpecialty(specialty);
 		if (crms.isEmpty()) {

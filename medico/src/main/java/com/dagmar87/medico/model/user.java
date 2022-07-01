@@ -1,28 +1,33 @@
 package com.dagmar87.medico.model;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
 public class user {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "user_generator")
 	private Long id;
-	
+
 	@Column(name = "email", unique = true)
 	private String email;
-	
+
 	@Column(name = "password")
 	private String password;
-	
+
 	@Column(name = "name")
 	private String name;
-	
+
 	@Column(name = "surname")
 	private String surname;
-	
+
 	@Column(name = "mobile_phone")
 	private String mobile_phone;
+	
+	public user() {
+		
+	}
 
 	public user(String email, String password, String name, String surname, String mobile_phone) {
 		super();
@@ -86,5 +91,5 @@ public class user {
 		return "user [id=" + id + ", email=" + email + ", password=" + password + ", name=" + name + ", surname="
 				+ surname + ", mobile_phone=" + mobile_phone + "]";
 	}
-	
+
 }
