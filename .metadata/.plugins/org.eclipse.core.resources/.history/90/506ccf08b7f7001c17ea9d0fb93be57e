@@ -1,0 +1,13 @@
+package com.dagmar87.medico.repository;
+
+import java.util.List;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import com.dagmar87.medico.model.crm;
+
+public interface crmRepository extends JpaRepository<crm, Long>{
+	
+	List<crm> findBySpecialty(String specialty);
+	
+}

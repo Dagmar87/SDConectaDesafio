@@ -1,0 +1,17 @@
+package com.dagmar87.medico.model;
+
+public class user {
+	
+	private int id;
+	
+	private String email;
+	
+	private String password;
+	
+	private String name;
+	
+	private String surname;
+	
+	private String mobile_phone;
+
+}
